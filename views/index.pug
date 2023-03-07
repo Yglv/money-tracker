@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  h1(class='content__title') Money-tracker
+  .modal(id='modal')
+    .modal__content 
+      .modal__header
+        span(class='modal__header__title') Добавить транзакцию
+        span(class="modal__header__close" id='close__button') &times;
+      .modal__body(id='modal__body')
+        form(id='body__form' method='post')
+  .content
+    .menu  
+      .menu__content
+        p(class='menu__counter') Баланс: </br>#{num} BYN
+        form(action='/' method='get' class='menu__form')
+          .menu__buttons
+            button(type='button' class='menu__button menu__plus-button' id='plus__button') +
+            button(type='button' class='menu__button menu__minus-button' id='minus__button') -
+    .main
+      .main__content
+        p(class='main__title') Транзакции
+        select(class='main__select' id='main__select')
+          option(class='main__option') Выберите категорию
+          each category in ['Еда', 'Гигиена', 'Жильё', 'Здоровье', 'Кафе', 'Машина', 'Одежда', 'Питомцы','Подарки', 'Развлечения', 'Связь', 'Cпорт', 'Cчета', 'Транспорт', 'Такси','Депозиты', 'Зарплата', 'Сбережения']
+            option(class='main__option') #{category}
+        .main__cards 
+          each item, key in transactions
+              .main__card 
+                .main__card__content
+                  if (item.sum > 0) 
+                    p(class='card__number') +#{item.sum} BYN
+                  else 
+                    p(class='card__number__loss') #{item.sum} BYN
+                  div
+                    p(class='card__text card__text__category') #{item.category}
+                    p(class='card__text') #{item.date}
+                form(action='/delete' method='post' class='card__form' )
+                  button(class='card__delete' data-id=key id='delete__button' onclick='DeleteCard(event)')
+                    i(class="fa-solid fa-trash" style="color:white; font-size:18px;") 

@@ -1,0 +1,283 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color:#3498db;
+}
+
+p,h1,h2,h3,h4,h5,h6,a,div{
+  padding: 0;
+  margin: 0;
+}
+
+input,select {
+  outline:none;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.content{
+  display: flex;
+  padding-top: 50px;
+}
+.content__title{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  width: 15%;
+  border:4px solid #3498db;
+  border-top: none;
+  border-left: none;
+}
+
+.menu{
+  border-left: none;
+  border-bottom: none;
+}
+
+.menu__content{
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.menu__counter{
+  align-self: center;
+  font-size: 35px;
+  color:black;
+  margin-bottom: 10vh;
+}
+
+.menu__buttons{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.menu__button{
+  border-radius: 25px;
+  width: 200px;
+  height: 60px;
+  font-size: 40px;
+  background-color: #3498db;
+  border: 3px solid white;
+  color:white;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.menu__button:hover{
+  background-color: white;
+  border: 3px solid #3498db;
+  color:#3498db;
+}
+
+.modal{
+  display: none;
+  position: absolute;
+  z-index: 1;
+  margin: 0 auto; 
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, -20%);
+  width: 40%; 
+  height: 50%; 
+  border: 1px solid black;
+  border-radius: 50px;
+}
+
+.modal__content {
+  background-color: #fefefe;
+  border: 1px solid #888;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  border: none;
+}
+
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  height: 15%;
+  border-bottom: 1px solid black;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color:#3498db;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border:none;
+}
+
+.modal__header__title{
+  font-size: 24px;
+}
+
+.modal__header__close {
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.modal__header__close:hover,
+.modal__header__close:focus {
+  
+  color:red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal__body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: none;
+  height: 85%;
+}
+
+.modal__body__input{
+  width: 250px;
+  height: 30px;
+  font-size: 17px;
+  color:gray;
+  border: none;
+  border-bottom: 2px solid #3498db;
+}
+
+.modal__body__confirm{  
+  width: 170px;
+  height: 40px;
+  border-radius: 15px;
+  background-color: #3498db;
+  color: white;
+  font-size: 17px;
+  border: none;
+  align-self: center;
+  cursor: pointer;
+}
+
+.modal__body__confirm:hover{
+  background-color: white;
+  color:#3498db;
+  border: 1px solid #3498db;
+}
+
+
+/*-----------main---------------------*/
+.main{
+  width: 70%;
+  padding-left: 100px;
+}
+.main__content{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main__select{
+  width: 50%;
+  height: 30px;
+  font-size: 20px;
+  color:rgb(183, 178, 178);
+  margin-bottom: 40px;
+}
+
+.main__option{
+  font-size: 18px;
+  color:black;
+}
+
+.main__title{
+  font-size: 55px;
+  margin-bottom: 5vh;
+}
+
+.main__cards{
+  display: grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+  column-gap: 70px;
+}
+
+.main__card{
+  position: relative;
+  max-width: 600px;
+  min-width: 350px;
+  width: 100%;
+  min-height: 140px;
+  border: 2px solid #3498db;
+  border-radius: 25px;
+  margin-bottom: 20px;
+}
+
+.main__card__content{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}
+
+.card__number{
+  font-size: 50px;
+  margin-right: 20px;
+  color:rgb(16, 193, 16);
+}
+.card__number__loss{
+  font-size: 50px;
+  margin-right: 20px;
+  color:rgb(193, 16, 16);
+}
+
+.card__text{
+  font-size: 30px;
+  color:black;
+}
+
+.main__card:hover{
+  background-color: #3498db;
+  border: 1px solid white;
+}
+
+.card__form{
+  display: none;
+  position: absolute;
+  top:0;
+  left:90%;
+  width: 10%;
+  border-bottom-right-radius: 24px;
+  border-top-right-radius: 24px;
+}
+.card__delete{
+  padding-top: 10px;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  border-bottom-right-radius: 24px;
+  border-top-right-radius: 24px;
+  background-color: red;
+}
+
+.main__card:hover .card__number{
+  color:rgb(29, 230, 29);
+}
+.main__card:hover .card__number__loss{
+  color:rgb(239, 59, 59);
+}
+.main__card:hover .card__text{
+  color: white;
+}
+.main__card:hover .card__form{
+  display: block;
+}
+.card__delete:hover{
+  background-color: rgb(179, 11, 11);
+}
